@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>picontrol</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="/socket.io/socket.io.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+    <script>
+        $(function () {
+            var socket = io();
+            $("#on").submit(function( event ) {
+                socket.emit('on');
+                event.preventDefault();
+                    });
+
+            $("#off").submit(function( event ) {
+            socket.emit('off');
+                event.preventDefault();
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="on" action="#">
+        <input type="submit" value="On!">
+      </form><br>
+      <form id="off" action="#">
+        <input type="submit" value="Off!">
+     </form>
+      
+</body>
+</html>
