@@ -18,5 +18,10 @@ io.on('connection', function(socket){
         socket.emit("off");
         console.log('off');
       });
+
+      socket.on('piconnected', function(){
+        socket.emit("off");
+        console.log('piconnected');
+      });
 });
 
