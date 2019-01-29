@@ -11,10 +11,11 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
     socket.on('on', function(){
+      socket.emit("on");
         console.log('on');
       });
       socket.on('off', function(){
-        console.log('off');
+        socket.emit("off");
       });
 });
 
