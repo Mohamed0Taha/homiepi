@@ -11,12 +11,12 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
     socket.on('on', function(){
-      socket.emit("RelayFired");
+      io.emit("RelayFired");
 
         console.log('on');
       });
       socket.on('off', function(){
-        socket.emit("off");
+        io.emit("off");
         console.log('off');
       });
 
