@@ -16,7 +16,7 @@ io.on('connection', function(socket){
       });
       socket.on('off', function(){
         socket.emit("off");
-        console.log('on');
+        console.log('off');
       });
 });
 
