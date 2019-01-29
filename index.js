@@ -11,7 +11,7 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
     socket.on('on', function(){
-      socket.emit("on");
+      socket.emit("RelayFired");
 
         console.log('on');
       });
