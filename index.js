@@ -12,12 +12,15 @@ app.get('/', function(req, res){
 io.on('connection', function(socket){
     socket.on('on', function(){
       io.emit("RelayFired");
-
-        console.log('on');
+      console.log('on');
       });
       socket.on('off', function(){
         io.emit("off");
         console.log('off');
+      });
+      socket.on('id', function(){
+        
+        console.log(socket.id);
       });
 
       socket.on('piconnected', function(){
