@@ -18,14 +18,12 @@ io.on('connection', function(socket){
         io.emit("off");
         console.log('off');
       });
-      socket.on('id', function(){
-        
-        console.log(socket.id);
-      });
+      
 
-      socket.on('piconnected', function(){
+      socket.on('piconnected', function(data){
         socket.emit("off");
-        console.log('piconnected');
+        console.log('piconnected',data);
       });
+      
 });
 
